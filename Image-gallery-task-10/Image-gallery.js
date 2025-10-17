@@ -30,16 +30,27 @@ isEmpty()
 
 function updateGallery()
 {
-    if(image_uploader.files)
+    if(image_uploader.files.length)
     {
         console.log(image_uploader.files)
         console.log(URL.createObjectURL(image_uploader.files[0]))
+        let imagect = document.createElement('div')
+        imagect.classList.add('imagecontainer')
         let image = document.createElement('img')
-        image.addEventListener('click',function(e){
-            console.log(e.target.classList.toggle('delete'))
+        let closebutton = document.createElement('div')
+        closebutton.classList.add('closebutton')
+        closebutton.innerText = 'X'
+        imagect.addEventListener('click',function(e){
+            e.target.classList.toggle('delete')
+        })
+        closebutton.addEventListener('click',function(e){
+            e.target.parentElement.classList.add('delete')
+            deleteSelected()
         })
         image.src = `${URL.createObjectURL(image_uploader.files[0])}`
-        imagegallery.appendChild(image)
+        imagect.appendChild(image)
+        imagect.appendChild(closebutton)
+        imagegallery.appendChild(imagect)
         console.log(image_uploader.files)
     }
     isEmpty()

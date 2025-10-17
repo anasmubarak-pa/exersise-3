@@ -15,6 +15,20 @@ body{
     display: none;
 }
 
+.imagecontainer{
+    position: relative;
+}
+
+.imagecontainer>img{
+    pointer-events: none;
+}
+
+.closebutton{
+    font-size: xx-large;
+    color: red;
+    position: absolute;
+}
+
 .uploadtext{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: xx-large;
