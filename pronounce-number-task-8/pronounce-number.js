@@ -26,11 +26,11 @@ function pronounceNumber(value,r)
             {
                 tempkey+=0
             }
-            console.log('tempkey',tempkey)
+            // console.log('tempkey',tempkey)
         }
         if(string_val[i]=='0')
         {
-            console.log('sp',string_val[i])
+            // console.log('sp',string_val[i])
             i++
             continue
         }
@@ -44,12 +44,12 @@ function pronounceNumber(value,r)
             {
                 count = tempkey.slice(0,-cc)
                 cc++
-                console.log('count',count)
+                // console.log('count',count)
             }
-            console.log('final count',count)
+            // console.log('final count',count)
             //we count and mod to get the 23 and call this funtion to get the prnounciation and cut and
-            console.log('number string',i, (Number(string_val.slice(i))-(Number(string_val)%Number(count)))/count+' '+numberlist[count])
-            console.log('recursive',pronounceNumber((Number(string_val)-(Number(string_val)%Number(count)))/count,1)+' '+numberlist[count])
+            // console.log('number string',i, (Number(string_val.slice(i))-(Number(string_val)%Number(count)))/count+' '+numberlist[count])
+            // console.log('recursive',pronounceNumber((Number(string_val)-(Number(string_val)%Number(count)))/count,1)+' '+numberlist[count])
             pronounce+=' '+pronounceNumber((Number(string_val.slice(i))-(Number(string_val)%Number(count)))/count)+' '+numberlist[count]
             i+=cc
             continue
